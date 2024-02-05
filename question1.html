@@ -3,6 +3,14 @@
 
   <head>
     <title>University of Texas Fan Knowledge Quiz</title>
+	  <script>
+		  function saveAnswer() 
+		  {
+			  var selectedOption = document.querySelector('input[name="question1"]:checked').value;
+			  localStorage.setItem('question1', selectedOption);
+			  window.location.href = 'question2.html';
+		  }
+	  </script>
   </head>
 <body>
 	
@@ -25,7 +33,7 @@
 		<input type="radio" id="option4" name="question1" value="option4">
 		<label for="option4">1888</label><br>
 	</div>
-	<button type="submit">Submit</button>
+	<button type="button" onclick="saveAnswer()">Submit</button>
 </form>
 </section>
 </html>
