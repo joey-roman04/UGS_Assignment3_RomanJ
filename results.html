@@ -16,13 +16,13 @@
     let imagePath = "";
     if (score >= 4) {
         resultText = "You're a true UT fan!";
-        imagePath = "path_to_your_image_for_high_score.jpg";
+        imagePath = "https://i.imgur.com/m114ntr.jpeg";
     } else if (score >= 2) {
         resultText = "If you want to be considered a true fan of UT, you need you need to brush up on your UT knowledge.";
-        imagePath = "path_to_your_image_for_medium_score.jpg";
+        imagePath = "https://i.imgur.com/TFfoG5N.gif";
     } else {
         resultText = "Are we talking about the same school? Maybe it's time to visit the UT campus?";
-        imagePath = "path_to_your_image_for_low_score.jpg";
+        imagePath = "https://i.imgur.com/atJOIl7.jpeg";
     }
     
     document.getElementById('results').innerHTML = `<h2>${resultText}</h2><img src="${imagePath}" alt="Result Image">`;
