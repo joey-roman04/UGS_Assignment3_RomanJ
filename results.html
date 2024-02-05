@@ -5,7 +5,7 @@
     <script>
         function displayResults() {
     let score = 0;
-    const correctAnswers = {'question1': 'option2', 'question2': 'option1', 'question3': 'option2', 'question4': 'option2', 'question5': 'option3'};
+    const correctAnswers = {'question1': 'option2', 'question2': 'option1', 'question3': 'option2', 'question3': 'option2', 'question5': 'option2'};
     for (let i = 1; i <= 5; i++) {
         if (localStorage.getItem(`question${i}`) === correctAnswers[`question${i}`]) {
             score++;
