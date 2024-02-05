@@ -4,13 +4,21 @@
     <title>University of Texas Fan Knowledge Quiz</title>
     <script>
         function displayResults() {
-            let score = 0;
-            const correctAnswers = {'question1': 'option2', 'question2': 'option1', 'question3': 'option2', 'question4': 'option3', 'question5': 'option2'};
-            for (let i = 1; i <= 5; i++) {
-                if (localStorage.getItem(`question${i}`) === correctAnswers[`question${i}`]) {
-                    score++;
-                }
-            }
+    let score = 0;
+    const correctAnswers = {
+        'question1': 'option2',
+        'question2': 'option1',
+        'question3': 'option2',
+        'question4': 'option3',
+        'question5': 'option2'
+    };
+    for (let i = 1; i <= 5; i++) {
+        const userAnswer = localStorage.getItem(`question${i}`);
+        console.log(`Question ${i}: User Answer: ${userAnswer}, Correct Answer: ${correctAnswers[`question${i}`]}`);
+        if (userAnswer === correctAnswers[`question${i}`]) {
+            score++;
+        }
+    }
             
             let resultText = "";
             let imagePath = "";
