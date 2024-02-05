@@ -4,31 +4,33 @@
     <title>University of Texas Fan Knowledge Quiz</title>
     <script>
         function displayResults() {
-    let score = 0;
-    const correctAnswers = {'question1': 'option2', 'question2': 'option1', 'question3': 'option2', 'question4': 'option3', 'question5': 'option2'};
-    for (let i = 1; i <= 5; i++) {
-        if (localStorage.getItem(`question${i}`) === correctAnswers[`question${i}`]) {
-            score++;
+            let score = 0;
+            const correctAnswers = {'question1': 'option2', 'question2': 'option1', 'question3': 'option2', 'question4': 'option3', 'question5': 'option2'};
+            for (let i = 1; i <= 5; i++) {
+                if (localStorage.getItem(`question${i}`) === correctAnswers[`question${i}`]) {
+                    score++;
+                }
+            }
+            
+            let resultText = "";
+            let imagePath = "";
+            if (score >= 4) {
+                resultText = "You're a true UT fan!";
+                imagePath = "https://i.imgur.com/m114ntr.jpeg";
+            } else if (score >= 2) {
+                resultText = "If you want to be considered a true fan of UT, you need to brush up on your UT knowledge.";
+                imagePath = "https://i.imgur.com/TFfoG5N.gif";
+            } else if (score === 1) {
+                resultText = "Are we talking about the same school? Maybe it's time to visit the UT campus?";
+                imagePath = "https://i.imgur.com/atJOIl7.jpeg";
+            } else {
+                // Correctly handle the case where score is 0
+                resultText = "It looks like you could use a bit more familiarity with UT. Don't worry; there's always time to learn!";
+                imagePath = "https://i.imgur.com/atJOIl7.jpeg"; // Provide a default image path for 0 score
+            }
+            
+            document.getElementById('results').innerHTML = `<h2>${resultText}</h2><img src="${imagePath}" alt="Result Image">`;
         }
-    }
-    
-    let resultText = "";
-    let imagePath = "";
-    if (score >= 4) {
-        resultText = "You're a true UT fan!";
-        imagePath = "https://i.imgur.com/m114ntr.jpeg";
-    } else if (score >= 2) {
-        resultText = "If you want to be considered a true fan of UT, you need you need to brush up on your UT knowledge.";
-        imagePath = "https://i.imgur.com/TFfoG5N.gif";
-    } else if (score === 1) {
-        resultText = "Are we talking about the same school? Maybe it's time to visit the UT campus?";
-        imagePath = "https://i.imgur.com/atJOIl7.jpeg";
-    } else {
-        resultText = "Failure in code";
-    }
-    
-    document.getElementById('results').innerHTML = `<h2>${resultText}</h2><img src="${imagePath}" alt="Result Image">`;
-}
     </script>
 </head>
 <body onload="displayResults()">  
