@@ -1,21 +1,28 @@
 <!DOCTYPE html>
 <html>
-
-  <head>
+<head>
     <title>University of Texas Fan Knowledge Quiz</title>
-  </head>
-<body>
-	
+    <script>
+        function displayResults() {
+            let score = 0;
+            const correctAnswers = {'question1': 'option2', 'question2': 'option1', 'question3': 'option3', 'question4': 'option2', 'question5': 'option3'};
+            for (let i = 1; i <= 5; i++) {
+                if (localStorage.getItem(`question${i}`) === correctAnswers[`question${i}`]) {
+                    score++;
+                }
+            }
+            document.getElementById('results').innerHTML = `Your score is: ${score} out of 5.`;
+        }
+    </script>
+</head>
+<body onload="displayResults()">  
 <header>
-	<h1> Final Results </h1>
+    <h1>Final Results</h1>
 </header>
 
-<!--Quiz Instructions -->
+<!-- Result Display -->
 <section id="results">
-	<form action="question1.html">
-		<p>Welcome UT fans! Let's test how well you know the school and see if you're a real fan of the University!</p>
-		<button type="submit">Start Quiz</button>
-	</form>
+    
 </section>
+</body>
 </html>
-
