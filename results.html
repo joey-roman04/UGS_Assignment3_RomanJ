@@ -4,15 +4,29 @@
     <title>University of Texas Fan Knowledge Quiz</title>
     <script>
         function displayResults() {
-            let score = 0;
-            const correctAnswers = {'question1': 'option2', 'question2': 'option1', 'question3': 'option2', 'question4': 'option3', 'question5': 'option2'};
-            for (let i = 1; i <= 5; i++) {
-                if (localStorage.getItem(`question${i}`) === correctAnswers[`question${i}`]) {
-                    score++;
-                }
-            }
-            document.getElementById('results').innerHTML = `Your score is: ${score} out of 5.`;
+    let score = 0;
+    const correctAnswers = {'question1': 'option2', 'question2': 'option1', 'question3': 'option3', 'question4': 'option2', 'question5': 'option3'};
+    for (let i = 1; i <= 5; i++) {
+        if (localStorage.getItem(`question${i}`) === correctAnswers[`question${i}`]) {
+            score++;
         }
+    }
+    
+    let resultText = "";
+    let imagePath = "";
+    if (score >= 4) {
+        resultText = "You're a true UT fan!";
+        imagePath = "path_to_your_image_for_high_score.jpg";
+    } else if (score >= 2) {
+        resultText = "Not bad, but you could know more about UT.";
+        imagePath = "path_to_your_image_for_medium_score.jpg";
+    } else {
+        resultText = "Maybe it's time to visit the UT campus?";
+        imagePath = "path_to_your_image_for_low_score.jpg";
+    }
+    
+    document.getElementById('results').innerHTML = `<h2>${resultText}</h2><img src="${imagePath}" alt="Result Image">`;
+}
     </script>
 </head>
 <body onload="displayResults()">  
@@ -22,7 +36,7 @@
 
 <!-- Result Display -->
 <section id="results">
-    
+    <p></p>
 </section>
 </body>
 </html>
