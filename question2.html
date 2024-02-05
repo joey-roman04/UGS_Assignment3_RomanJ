@@ -3,6 +3,14 @@
 
   <head>
     <title>University of Texas Fan Knowledge Quiz</title>
+	  <script>
+		  function saveAnswer() 
+		  {
+			  var selectedOption = document.querySelector('input[name="question2"]:checked').value;
+			  localStorage.setItem('question2', selectedOption);
+			  window.location.href = 'question3.html';
+		  }
+	  </script>
   </head>
 <body>
 	
