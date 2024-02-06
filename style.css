@@ -1,13 +1,13 @@
 header {
-  background-color: #bf5700; /* UT Orange */
+  background-color: #bf5700; 
   color: white;
   padding: 20px;
   text-align: center;
 }
 
-/* Style for the submit button */
+
 button {
-  background-color: #bf5700; /* UT Orange */
+  background-color: #bf5700; 
   color: white;
   border: none;
   padding: 10px 20px;
