@@ -1,29 +1,34 @@
 <!DOCTYPE html>
 <html>
-
   <head>
     <title>University of Texas Fan Knowledge Quiz</title>
 	  <script>
-		  function saveAnswer() 
-		  {
-			  var selectedOption = document.querySelector('input[name="question2"]:checked').value;
-			  localStorage.setItem('question2', selectedOption);
-			  window.location.href = 'question3.html';
-		  }
-	  </script>
+		  function saveAnswer() {
+            // Use let or const for variable declaration
+            let selectedOptionElement = document.querySelector('input[name="question2"]:checked');
+            // Check if an option has been selected
+            if (selectedOptionElement) {
+                let selectedOption = selectedOptionElement.value;
+                localStorage.setItem('question2', selectedOption);
+                window.location.href = 'question3.html';
+            } else {
+                // Optionally, alert the user to select an option before proceeding
+                alert("Please select an option before proceeding.");
+            }
+        }
+    </script>
   </head>
 <body>
 	
 <header>
 	<h1> Question #2 </h1>
 </header>
-
 <!--Quiz Instructions -->
 <section id="question2">
 	<form action="question3.html">
-	<!--Quiz Question 2 -->
+	<!--Quiz Question 1 -->
 	<div class="question">
-		<p>Question 2: How big is UT's campus?</p>
+		<p>Question 1: How big is UT's campus?</p>
 		<input type="radio" id="option1" name="question2" value="option1">
 		<label for="option1">431 acres</label><br>
 		<input type="radio" id="option2" name="question2" value="option2">
