@@ -1,0 +1,22 @@
+<link rel="stylesheet" href="style.css">
+header {
+  background-color: #bf5700; /* UT Orange */
+  color: white;
+  padding: 20px;
+  text-align: center;
+}
+
+/* Style for the submit button */
+button {
+  background-color: #bf5700; /* UT Orange */
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: background-color 0.5s;
+}
+
+button:hover {
+  background-color: #f77f00;
+}
