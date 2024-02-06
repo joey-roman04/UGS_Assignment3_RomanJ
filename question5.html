@@ -11,6 +11,69 @@
 			  window.location.href = 'results.html';
 		  }
 	  </script>
+	  <!DOCTYPE html>
+<html>
+
+  <head>
+    <title>University of Texas Fan Knowledge Quiz</title>
+	  <script>
+		  function saveAnswer() 
+		  {
+			  var selectedOption = document.querySelector('input[name="question1"]:checked').value;
+			  localStorage.setItem('question1', selectedOption);
+			  window.location.href = 'question2.html';
+		  }
+	  </script>
+	  <style>
+header {
+  background-color: #bf5700; 
+  color: white;
+  padding: 20px;
+  text-align: center;
+}
+
+
+button {
+  background-color: #bf5700; 
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: background-color 0.5s;
+}
+
+button:hover {
+  background-color: #f77f00;
+}
+</style>
+	  
+  </head>
+<body>
+	
+<header>
+	<h1> Question #1 </h1>
+</header>
+
+<!--Quiz Instructions -->
+<section id="question1">
+	<form action="question2.html">
+	<!--Quiz Question 1 -->
+	<div class="question">
+		<p>Question 1: When was The University of Texas founded?</p>
+		<input type="radio" id="option1" name="question1" value="option1">
+		<label for="option1">1881</label><br>
+		<input type="radio" id="option2" name="question1" value="option2">
+		<label for="option2">1883</label><br>
+		<input type="radio" id="option3" name="question1" value="option3">
+		<label for="option3">1893</label><br>
+		<input type="radio" id="option4" name="question1" value="option4">
+		<label for="option4">1888</label><br>
+	</div>
+	<button type="button" onclick="saveAnswer()">Submit</button>
+</form>
+</section>
+</html>
   </head>
 <body>
 	
