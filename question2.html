@@ -4,17 +4,12 @@
   <head>
     <title>University of Texas Fan Knowledge Quiz</title>
 	  <script>
-		  function saveAnswer() {
-            // Use let or const for variable declaration
-            let selectedOptionElement = document.querySelector('input[name="question2"]:checked');
-            // Check if an option has been selected
-            if (selectedOptionElement) {
-                let selectedOption = selectedOptionElement.value;
-                localStorage.setItem('question2', selectedOption);
-                window.location.href = 'question3.html';
-            } else {
-                // Optionally, alert the user to select an option before proceeding
-                alert("Please select an option before proceeding.");
+		  function saveAnswer() 
+		  {
+			  var selectedOption = document.querySelector('input[name="question1"]:checked').value;
+			  localStorage.setItem('question1', selectedOption);
+			  window.location.href = 'question2.html';
+		  }
             }
         }
     </script>
