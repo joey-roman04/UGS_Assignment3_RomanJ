@@ -6,20 +6,17 @@
 	  <script>
 		  function saveAnswer() 
 		  {
-			  var selectedOption = document.querySelector('input[name="question1"]:checked').value;
-			  localStorage.setItem('question1', selectedOption);
-			  window.location.href = 'question2.html';
+			  var selectedOption = document.querySelector('input[name="question2"]:checked').value;
+			  localStorage.setItem('question2', selectedOption);
+			  window.location.href = 'question3.html';
 		  }
-            }
-        }
-    </script>
+	  </script>
   </head>
 <body>
-	
+
 <header>
 	<h1> Question #2 </h1>
 </header>
-
 <!--Quiz Instructions -->
 <section id="question2">
 	<form action="question3.html">
@@ -35,7 +32,7 @@
 		<input type="radio" id="option4" name="question2" value="option4">
 		<label for="option4">129 acres</label><br>
 	</div>
-	<button type="button" onclick="saveAnswer()">Submit</button>
+	<button type="submit">Submit</button>
 </form>
 </section>
 </html>
