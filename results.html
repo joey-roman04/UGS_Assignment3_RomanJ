@@ -2,6 +2,53 @@
 <html>
 <head>
     <title>University of Texas Fan Knowledge Quiz</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #fff; /* Optional: Adjust if you have a specific background color in mind */
+        }
+
+        header {
+            background-color: #bf5700; /* UT's burnt orange */
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        section#results {
+            padding: 20px;
+            text-align: center;
+        }
+
+        h2 {
+            color: #333; /* Dark text color for readability; adjust as needed */
+        }
+
+        img {
+            max-width: 80%; /* Adjust based on your preference */
+            height: auto;
+            margin-top: 20px;
+        }
+
+        /* Additional styling for a retry or back to start button, if you wish to add one */
+        button {
+            background-color: #bf5700; /* Matching the UT theme */
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 12px;
+            cursor: pointer;
+            transition: background-color 0.5s;
+            display: inline-block; /* For proper spacing and alignment */
+            margin-top: 20px;
+        }
+
+        button:hover {
+            background-color: #f77f00; /* Lighter shade on hover */
+        }
+    </style>
     <script>
         function displayResults() {
     let score = 0;
