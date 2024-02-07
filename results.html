@@ -2,16 +2,18 @@
 <html>
 <head>
     <title>University of Texas Fan Knowledge Quiz</title>
+    <!-- styling for results page-->
     <style>
+        
         body {
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #fff; /* Optional: Adjust if you have a specific background color in mind */
+            background-color: #fff; /* Sets background color to white */
         }
 
         header {
-            background-color: #bf5700; /* UT's burnt orange */
+            background-color: #bf5700; /* UT's orange */
             color: white;
             padding: 20px;
             text-align: center;
@@ -19,22 +21,23 @@
 
         section#results {
             padding: 20px;
-            text-align: center;
+            text-align: center; /*sets results to middle of page*/
         }
-
+        
+        /*Result Text */
         h2 {
-            color: #333; /* Dark text color for readability; adjust as needed */
+            color: #333; /* Dark color to make easy to read */
         }
 
         img {
-            max-width: 80%; /* Adjust based on your preference */
+            max-width: 80%; /* image style */
             height: auto;
             margin-top: 20px;
         }
 
         /* Additional styling for a retry or back to start button, if you wish to add one */
         button {
-            background-color: #bf5700; /* Matching the UT theme */
+            background-color: #bf5700; /* UT theme colors */
             color: white;
             border: none;
             padding: 10px 20px;
@@ -46,12 +49,14 @@
         }
 
         button:hover {
-            background-color: #f77f00; /* Lighter shade on hover */
+            background-color: #f77f00; /* Different color when hovering over the button */
         }
     </style>
     <script>
         function displayResults() {
+            //sets amount of question answered correctly to 0
     let score = 0;
+            //Sets correct answer for each question
     const correctAnswers = {
         'question1': 'option2',
         'question2': 'option1',
@@ -59,9 +64,13 @@
         'question4': 'option3',
         'question5': 'option2'
     };
+            
     for (let i = 1; i <= 5; i++) {
+        // checks each answer stored in storage with correct answer 
         const userAnswer = localStorage.getItem(`question${i}`);
+        //used console.log function to test code for errors when first creating code
         console.log(`Question ${i}: User Answer: ${userAnswer}, Correct Answer: ${correctAnswers[`question${i}`]}`);
+        //creates if function to add point to score for each question selected correctly 
         if (userAnswer === correctAnswers[`question${i}`]) {
             score++;
         }
@@ -69,6 +78,7 @@
             
             let resultText = "";
             let imagePath = "";
+            //code that determines what result to make determined based on number of questions answered correctly 
             if (score >= 4) {
                 resultText = "You're a true UT fan!";
                 imagePath = "https://i.imgur.com/m114ntr.jpeg";
@@ -83,7 +93,7 @@
                 resultText = "You got zero questions correct, do you know anything about UT?";
                 imagePath = "https://i.imgur.com/atJOIl7.jpeg"; // Provide a default image path for 0 score
             }
-            
+            //displays results and image incorporated with each result 
             document.getElementById('results').innerHTML = `<h2>${resultText}</h2><img src="${imagePath}" alt="Result Image">`;
         }
     </script>
@@ -93,9 +103,6 @@
     <h1>Final Results</h1>
 </header>
 
-<!-- Result Display -->
-<section id="results">
-    <p></p>
-</section>
+
 </body>
 </html>
