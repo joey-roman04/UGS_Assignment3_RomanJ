@@ -2,11 +2,12 @@
 <html>
   <head>
     <title>University of Texas Fan Knowledge Quiz</title>
+	  <!-- Similar to question 1 Java code, however, now perform check to prevent user from going on to next question without selecting an option -->
 	  <script>
 		  function saveAnswer() {
-           
+           // gets selected radio button 
             let selectedOptionElement = document.querySelector('input[name="question2"]:checked');
-           
+           //code that stores data in local storage while also ensuring user selects button
             if (selectedOptionElement) {
                 let selectedOption = selectedOptionElement.value;
                 localStorage.setItem('question2', selectedOption);
@@ -17,6 +18,7 @@
             }
         }
     </script>
+	  <!-- Same style used in Q1 is used throughout -->
 	  <style>
 header {
   background-color: #bf5700; 
@@ -49,7 +51,7 @@ button:hover {
 <!--Quiz Instructions -->
 <section id="question2">
 	<form action="question3.html">
-	
+	<!-- Same formate seen in Q1-->
 	<div class="question">
 		<p>Question 2: How big is UT's campus?</p>
 		<input type="radio" id="option1" name="question2" value="option1">
@@ -61,6 +63,8 @@ button:hover {
 		<input type="radio" id="option4" name="question2" value="option4">
 		<label for="option4">129 acres</label><br>
 	</div>
+		<!-- Saves answer making sure data is in local storage-->
+		<!-- At first my quiz wouldn't save data, forgot the saveAnswer prompt, took me forever to find out why -->
 	<button type="button" onclick="saveAnswer()">Submit</button>
 </form>
 </section>
