@@ -1,2 +1,2 @@
-# [title of your app]
+# [University of Texas Quiz]
 [description/guide for your app]
